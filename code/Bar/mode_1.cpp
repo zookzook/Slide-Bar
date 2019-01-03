@@ -11,11 +11,12 @@ void run_mode_1(void) {
   int i = 0;
   while(i < MAX_BARS) {
 
+    LED* result = &LEDS[i];
     if( i < n ) {
-      LEDS[i].current = 255;      
+      result->current = 255;      
     } // if 
     else {
-      LEDS[i].current = 0;
+      result->current = 0;
     } // else 
     i++;
   }

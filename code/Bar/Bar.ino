@@ -4,6 +4,7 @@
 #include "types.h"
 #include "mode_1.h"
 #include "mode_2.h"
+#include "input.h"
 
 const int LATCH_PIN = 0;
 const int DATA_PINPIN = 1;
@@ -40,7 +41,8 @@ void pwm(void) {
     w = w | (LEDS[j].current > i);
     j--;
   }
-  
+
+  w = w | get_mode_mask();
   write_word(w);
   
 }
@@ -80,12 +82,11 @@ void setup() {
   digitalWrite(LATCH_PIN, HIGH);
     
   run_test();
-  
-  enter_mode_2();
+  set_pwm();
   init_timer_1();        // initialize timer registers  
   sei();
 }
 
 void loop() {
-  run_mode_2();
+  check_mode();
 }

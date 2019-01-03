@@ -853,9 +853,9 @@ Wire Wire Line
 Text Label 6650 3050 0    50   ~ 0
 LATCH
 Text Label 6650 3150 0    50   ~ 0
-CLOCK
-Text Label 6650 3250 0    50   ~ 0
 DATA
+Text Label 6650 3250 0    50   ~ 0
+CLOCK
 Wire Wire Line
 	6300 3350 6650 3350
 Text Label 6650 3350 0    50   ~ 0

@@ -1,18 +1,28 @@
 #include "types.h"
 #include "input.h"
 
-#define DURATION 250
-
 static LED      led;
 static t_millis last_update = 0;
 static int      last_value  = 0;
 static byte     status      = 0;
 
+t_millis calc_duration(int value) {
+
+  t_millis result = 1000;
+  if(value > 7) {
+    result = 250;
+    if(value > 9) {
+      result = 125;
+    } // if 
+  } // if
+
+  return result;
+}
+
 void enter_mode_2(void) {
   set_pwm();
-
-  led.start    = millis() + DURATION;
-  led.duration = DURATION;
+  led.start    = millis();
+  led.duration = calc_duration(get_value());
   led.from     = 0;
   led.current  = 0;
   led.to       = 255;
@@ -20,26 +30,23 @@ void enter_mode_2(void) {
 
 static start_pulse(void) {
   led.start    = millis();
-  led.duration = DURATION;
+  led.duration = calc_duration(last_value);
   led.from     = 255;
   led.current  = 255;
   led.to       = 0;
 }
 
-static byte get_brightness(int value) {
+static byte get_brightness(int n) {
 
   byte result = 255;
-
-  if(value > 7) {
-
-    t_millis now = millis();
+  t_millis now = millis();
   float f = (float)(now - led.start) / led.duration;
   if( f > 1.0 ) {
     byte value   = led.from;
     led.from     = led.to;
     led.to       = value;
     led.start    = now;
-    led.duration = DURATION;
+    led.duration = calc_duration(n);
     result       = led.from;
   }
   else
@@ -50,8 +57,6 @@ static byte get_brightness(int value) {
     f = easeInOutQuad(f);
     result = led.from + (led.to - led.from) * f;    
   } // else
-
-  }
   
   return result;
 }
@@ -81,7 +86,7 @@ void run_mode_2(void) {
         last_value  = n;
         last_update = now;   
       }  
-      else if(now - last_update > 1000) {
+      else if(now - last_update > 500) {
         status = 0;
         start_pulse();
       }
