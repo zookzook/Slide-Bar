@@ -4,9 +4,9 @@ Simple board for a slide potentiometer and visible feedback.
 
 <img src="https://github.com/zookzook/Slide-Bar/raw/master/gfx/slide-bar.png" width="600">
 
-The idea behind it: With a Schiebepotentionmeter an analog value can be changed. The change or the value is displayed with a bar display (10 LEDs). The board is designed so that you can connect several to each other. The power supply is thus forwarded from board to board.
+The idea behind it: With a slide potentionmeter an analog value can be changed. The change or the value is displayed with a bar display (10 LEDs). The board is designed so that you can connect several to each other. The power supply is thus forwarded from board to board.
 
-You can thus combine the components. If you have three of the sliders, you can use the three analog values for one RGB LED. With the three Schiebepotentionmeter thus a certain color can be adjusted.
+You can thus combine the components. If you have three of the sliders, you can use the three analog values for one RGB LED. With the three slide potentionmeter thus a certain color can be adjusted.
 
 Okay, that's a bit boring, but great fun for kids. If you add a chic frame and a nice instrument plate to the whole thing, you get a super game for children who like to fiddle around everywhere. Ultimately, that's the idea: a simple game machine and different input components (sliding and turning meters, switches) and output components (RGB LEDs, bar LEDs) with different effects (animated, cursor, Zini mode).
 
