@@ -6,23 +6,11 @@ static t_millis last_update = 0;
 static int      last_value  = 0;
 static byte     status      = 0;
 
-t_millis calc_duration(int value) {
 
-  t_millis result = 1000;
-  if(value > 7) {
-    result = 250;
-    if(value > 9) {
-      result = 125;
-    } // if 
-  } // if
-
-  return result;
-}
-
-void enter_mode_2(void) {
+void enter_mode_3(void) {
   set_pwm();
   led.start    = millis();
-  led.duration = calc_duration(get_value());
+  led.duration = 100;
   led.from     = 0;
   led.current  = 0;
   led.to       = 255;
@@ -30,7 +18,7 @@ void enter_mode_2(void) {
 
 static start_pulse(void) {
   led.start    = millis();
-  led.duration = calc_duration(last_value);
+  led.duration = 100;
   led.from     = 255;
   led.current  = 255;
   led.to       = 0;
@@ -41,19 +29,23 @@ static byte get_brightness(int n) {
   byte result = 255;
   t_millis now = millis();
   float f = (float)(now - led.start) / led.duration;
-  if( f > 1.0 ) {
+  if( f < 0 ) {
+    result = led.from;
+  } // if 
+  else
+  if( f > 4.0 ) {
     byte value   = led.from;
     led.from     = led.to;
     led.to       = value;
     led.start    = now;
-    led.duration = calc_duration(n);
+    led.duration = 100;
     result       = led.from;
   }
   else
-  if( f < 0 ) {
-    result = led.from;
+  if( f > 1.0 ) {
+    result = led.to;
   } // if 
-  else {
+              else {
     f = easeInOutQuad(f);
     result = led.from + (led.to - led.from) * f;    
   } // else
@@ -61,7 +53,8 @@ static byte get_brightness(int n) {
   return result;
 }
 
-void run_mode_2(void) {
+
+void run_mode_3(void) {
   
   t_millis now    = millis();
   int n           = get_value();
@@ -92,11 +85,11 @@ void run_mode_2(void) {
       }
       break;    
   }
-
+  
   while(i < MAX_BARS) {
 
     LED* result = &LEDS[i];
-    if( i <= n ) {
+    if( i == n ) {
       result->current = brightness;
     } // if 
     else {

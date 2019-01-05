@@ -12,7 +12,7 @@ void run_mode_1(void) {
   while(i < MAX_BARS) {
 
     LED* result = &LEDS[i];
-    if( i < n ) {
+    if( i <= n ) {
       result->current = 255;      
     } // if 
     else {

@@ -4,7 +4,7 @@
 /**
  * mode 2:
  * 
- * Es wird 
+ * Analogous to mode 1. The active LEDs are animated pulsatingly. In the red area, the pulse rate is higher.
  */
 void run_mode_2(void);
 void enter_mode_2(void);

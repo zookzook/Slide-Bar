@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 #include <tinySPI.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -9,10 +12,6 @@
 const int LATCH_PIN = 0;
 const int DATA_PINPIN = 1;
 const int CLOCK_PIN = 2;    
-
-const int MASKS[]    = { 0x0000, 0x0001, 0x0003, 0x0007, 0x000f, 0x001f, 0x003f, 0x007f, 0x00ff, 0x01ff, 0x03ff };
-const int DIVISOR    = 1023 / MAX_BARS;
-      int last_value = -1;
 
 void (*fun_ptr)(void) = NULL; 
 
