@@ -53,7 +53,7 @@ U 1 1 5C2902AB
 P 9600 3850
 F 0 "J3" H 9655 4317 50  0000 C CNN
 F 1 "USB_A" H 9655 4226 50  0000 C CNN
-F 2 "Connector_USB:USB_A_CNCTech_1001-011-01101_Horizontal" H 9750 3800 50  0001 C CNN
+F 2 "myfootprint:LUM_2410_06_USB_A_SMD" H 9750 3800 50  0001 C CNN
 F 3 " ~" H 9750 3800 50  0001 C CNN
 	1    9600 3850
 	1    0    0    -1  
@@ -935,17 +935,6 @@ F 3 "~" H 10500 850 50  0001 C CNN
 	1    10500 850 
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR01
-U 1 1 5C2C9EA4
-P 10100 950
-F 0 "#PWR01" H 10100 700 50  0001 C CNN
-F 1 "GND" H 10105 777 50  0000 C CNN
-F 2 "" H 10100 950 50  0001 C CNN
-F 3 "" H 10100 950 50  0001 C CNN
-	1    10100 950 
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	10300 950  10100 950 
 $Comp
@@ -1186,7 +1175,7 @@ U 1 1 5C34F907
 P 2850 1250
 F 0 "RV2" H 2780 1296 50  0000 R CNN
 F 1 "R_POT" H 2780 1205 50  0000 R CNN
-F 2 "Potentiometer_THT:Potentiometer_ACP_CA6-H2,5_Horizontal" H 2850 1250 50  0001 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Piher_PT-10-V10_Vertical" H 2850 1250 50  0001 C CNN
 F 3 "~" H 2850 1250 50  0001 C CNN
 	1    2850 1250
 	1    0    0    -1  
@@ -1224,5 +1213,7 @@ MODE
 Wire Wire Line
 	6300 3450 6650 3450
 Text Label 6650 3450 0    50   ~ 0
+MODE
+Text Label 10100 950  2    50   ~ 0
 MODE
 $EndSCHEMATC
