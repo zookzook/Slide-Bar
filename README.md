@@ -2,7 +2,7 @@
 
 Simple board for a slide potentiometer and visible feedback.
 
-<img src="https://github.com/zookzook/Slide-Bar/raw/master/gfx/slide-bar.png" width="600">
+<img src="https://github.com/zookzook/Slide-Bar/raw/master/gfx/schema.pdf" width="600">
 
 The idea behind it: With a slide potentionmeter an analog value can be changed. The change or the value is displayed with a bar display (10 LEDs). The board is designed so that you can connect several to each other. The power supply is thus forwarded from board to board.
 
@@ -22,3 +22,6 @@ The whole thing is controlled by an Attiny85 chip. With the help of two shift re
 6) still in the planning stage
 
 The power comes from a USB-A cable. Each two pin headers for 5V + and GND are located on the sides, so that the boards can be placed side by side or one below the other.
+
+# Board preview
+<img src="https://github.com/zookzook/Slide-Bar/raw/master/gfx/slide-bar.png" width="600">
