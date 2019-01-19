@@ -2,7 +2,7 @@
 
 Simple board for a slide potentiometer and visible feedback.
 
-<img src="https://github.com/zookzook/Slide-Bar/raw/master/gfx/schema.pdf" width="600">
+<img src="https://github.com/zookzook/Slide-Bar/raw/master/gfx/schema.png" width="600">
 
 The idea behind it: With a slide potentionmeter an analog value can be changed. The change or the value is displayed with a bar display (10 LEDs). The board is designed so that you can connect several to each other. The power supply is thus forwarded from board to board.
 
