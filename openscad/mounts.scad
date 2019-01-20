@@ -1,7 +1,7 @@
 width = 50;
 height = 90;
 dx_1 = 5.5;
-dy_1 = 5.0;
+dy_1 = 5.5;
 st_1 = 2.6;
 h = 2.6;
 
@@ -21,8 +21,8 @@ module mounting() {
         union() {
             linear_extrude(height = h, center = false, convexity = 1, twist = 0, slices = 20, scale = 1.0, $fn = 50)
                 import (file = "../dxf/mounting-1x.dxf", layer = "0");
-            screw_holder([dx_1,4.5,0]);
-            screw_holder([width - dx_1, 4.5,0]);
+            screw_holder([dx_1,5.0,0]);
+            screw_holder([width - dx_1, 5.0,0]);
             screw_holder([width - dx_1,height - dy_1,0]);
             screw_holder([dx_1,height - dy_1,0]);
         }
