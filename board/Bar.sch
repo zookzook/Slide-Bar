@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Slide-Bar"
-Date ""
+Date "2019-01-19"
 Rev "1"
 Comp ""
 Comment1 ""

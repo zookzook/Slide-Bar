@@ -1,0 +1,42 @@
+// rotate_extrude($fn=200)  
+//linear_extrude(height = 1, center = true)
+
+module screw_holder(pos = [0,0,2] ) {
+    
+    translate(pos)    
+    difference() {
+        rotate_extrude($fn=50)
+            import (file = "../dxf/screw-holder.dxf", layer = "0");
+        cylinder(h = 30, r1 = 1.5, r2 = 1.5, $fn = 30, center = true);
+    }
+}
+
+
+
+width = 50;
+height = 90;
+dx_1 = 5.5;
+dy_1 = 5.0;
+st_1 = 2.6;
+h = 2.6;
+
+module mounting() {
+    
+    difference() {
+        union() {
+            linear_extrude(height = h, center = false, convexity = 1, twist = 0, slices = 20, scale = 1.0, $fn = 50)
+                import (file = "../dxf/mounting-1x.dxf", layer = "0");
+            screw_holder([dx_1,4.5,0]);
+            screw_holder([width - dx_1, 4.5,0]);
+            screw_holder([width - dx_1,height - dy_1,0]);
+            screw_holder([dx_1,height - dy_1,0]);
+        }
+        linear_extrude(height = 10, center = true, convexity = 1, twist = 0, slices = 20, scale = 1.0, $fn = 50)
+            import (file = "../dxf/mounting-1x.dxf", layer = "out");
+    }
+
+}
+
+
+mounting();
+
