@@ -1,5 +1,9 @@
-// rotate_extrude($fn=200)  
-//linear_extrude(height = 1, center = true)
+width = 50;
+height = 90;
+dx_1 = 5.5;
+dy_1 = 5.0;
+st_1 = 2.6;
+h = 2.6;
 
 module screw_holder(pos = [0,0,2] ) {
     
@@ -10,15 +14,6 @@ module screw_holder(pos = [0,0,2] ) {
         cylinder(h = 30, r1 = 1.5, r2 = 1.5, $fn = 30, center = true);
     }
 }
-
-
-
-width = 50;
-height = 90;
-dx_1 = 5.5;
-dy_1 = 5.0;
-st_1 = 2.6;
-h = 2.6;
 
 module mounting() {
     
