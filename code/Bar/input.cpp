@@ -4,6 +4,8 @@
 #include "mode_2.h"
 #include "mode_3.h"
 #include "mode_4.h"
+#include "mode_5.h"
+#include "mode_6.h"
 
 #define MODE_1_MASK (((uint16_t)B00000100)<<8)
 #define MODE_2_MASK (((uint16_t)B00001000)<<8)
@@ -30,7 +32,7 @@ int get_value(void) {
   
   int raw    = analogRead(ANALOG_INPUT);
   current    = weight * raw + (1.0 - weight) * current;
-  int result = map(current, 0, 1000, 0, MAX_BARS - 1); // durch den Filter erreichen wir keine 100% bzw 1023.
+  int result = (MAX_BARS - 1) - map(current, 0, 1000, 0, MAX_BARS - 1); // durch den Filter erreichen wir keine 100% bzw 1023.
   
   return result;  
 }
@@ -77,6 +79,18 @@ void check_mode(void) {
         enter_mode_4();
         mode_func_ptr = &run_mode_4;
         mode_mask = MODE_4_MASK;
+        break;
+
+      case 4:
+        enter_mode_5();
+        mode_func_ptr = &run_mode_5;
+        mode_mask = MODE_5_MASK;
+        break;
+
+      case 5:
+        enter_mode_6();
+        mode_func_ptr = &run_mode_6;
+        mode_mask = MODE_6_MASK;
         break;
 
       default:

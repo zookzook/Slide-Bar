@@ -33,12 +33,12 @@ void pwm(void) {
 
   i += 5;
   unsigned int w = 0x0000;
-  int          j = MAX_BARS - 1;
+  int          j = 0;
   
-  while(j >= 0) {
+  while(j < MAX_BARS) {
     w = w << 1;
     w = w | (LEDS[j].current > i);
-    j--;
+    j++;
   }
 
   w = w | get_mode_mask();

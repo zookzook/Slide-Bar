@@ -9,10 +9,10 @@ static byte     status      = 0;
 t_millis calc_duration(int value) {
 
   t_millis result = 1000;
-  if(value > 7) {
-    result = 250;
-    if(value > 9) {
-      result = 125;
+  if(value > 6) {
+    result = 500;
+    if(value > 7) {
+      result = 250;
     } // if 
   } // if
 

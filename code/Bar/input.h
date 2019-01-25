@@ -11,6 +11,8 @@ void check_mode(void);
 #define MODE_2 1
 #define MODE_3 2
 #define MODE_3 3
-#define MAX_MODES 4
+#define MODE_3 4
+#define MODE_3 5
+#define MAX_MODES 6
 
 #endif
