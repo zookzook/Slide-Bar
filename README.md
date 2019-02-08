@@ -19,7 +19,7 @@ The whole thing is controlled by an Attiny85 chip. With the help of two shift re
 3) Cursor mode. The value is displayed as a blinking cursor. If the potentiometer is changed, the flashing will be deactivated during the modification time.
 4) Zini mode. When the value changes, the cursor moves, pulling a tail behind it. The previously visited LEDs are slowly faded out.
 5) still in the planning stage
-6) still in the planning stage
+6) Dropping mode. A cursor is moving from the current position to the first position of the slider.
 
 The power comes from a USB-A cable. Each two pin headers for 5V + and GND are located on the sides, so that the boards can be placed side by side or one below the other.
 
