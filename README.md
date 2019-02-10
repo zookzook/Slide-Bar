@@ -26,4 +26,4 @@ The power comes from a USB-A cable. Each two pin headers for 5V + and GND are lo
 # Board preview
 <img src="https://github.com/zookzook/Slide-Bar/raw/master/gfx/slide-bar.png" width="600">
 
-You can order pretty board from here: https://aisler.net/p/UGINGUNY
+You can order pretty boards from here: https://aisler.net/p/UGINGUNY
